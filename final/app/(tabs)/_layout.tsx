@@ -1,7 +1,7 @@
-import { Ionicons } from '@expo/vector-icons'
-import { Tabs } from 'expo-router'
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { Tabs, useSegments } from 'expo-router'
+import { Ionicons } from '@expo/vector-icons'
+import { View, StyleSheet } from 'react-native'
 import { useAuth } from '../../contexts/AuthContext'
 
 const tabs = [
@@ -19,29 +19,30 @@ export default function TabsLayout() {
     user?.email?.split('@')[0] ||
     'Profile'
 
+  const segments = useSegments()
+  const hideTabs = segments[segments.length - 1] === 'music'
+
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: true,
-
         tabBarActiveTintColor: '#8E97FD',
         tabBarInactiveTintColor: '#A0A3B1',
-
         tabBarItemStyle: {
           justifyContent: 'center',
           alignItems: 'center',
         },
-
-        tabBarStyle: {
-          backgroundColor: '#FFFFFF',
-          borderTopWidth: 0,
-          elevation: 25,
-          height: 100,
-          paddingTop: 15,
-          paddingBottom: 12,
-        },
-
+        tabBarStyle: hideTabs
+          ? { display: 'none' }
+          : {
+              backgroundColor: '#FFFFFF',
+              borderTopWidth: 0,
+              elevation: 25,
+              height: 100,
+              paddingTop: 15,
+              paddingBottom: 12,
+            },
         tabBarLabelStyle: {
           fontSize: 14,
           marginTop: 10,

@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   grid: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     paddingBottom: 24,

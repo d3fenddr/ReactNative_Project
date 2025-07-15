@@ -159,12 +159,37 @@ export default function RegisterScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FFF', paddingHorizontal: 24 },
-  back: { marginTop: 40, padding: 8 },
-  inner: { flex: 1, justifyContent: 'center' },
-  title: { fontSize: 28, textAlign: 'center', marginBottom: 40 },
-  orText: { textAlign: 'center', color: '#999', marginVertical: 16, fontSize: 12, letterSpacing: 1 },
-  error: { color: '#D00', textAlign: 'center', marginBottom: 8, fontSize: 13 },
+  container: { 
+    flex: 1, 
+    backgroundColor: '#FFF', 
+    paddingHorizontal: 24 
+  },
+  back: { 
+    marginTop: 40, 
+    padding: 8 
+  },
+  inner: { 
+    flex: 1, 
+    justifyContent: 'center' 
+  },
+  title: { 
+    fontSize: 28, 
+    textAlign: 'center', 
+    marginBottom: 40 
+  },
+  orText: { 
+    textAlign: 'center', 
+    color: '#999', 
+    marginVertical: 16, 
+    fontSize: 12, 
+    letterSpacing: 1 
+  },
+  error: { 
+    color: '#D00', 
+    textAlign: 'center', 
+    marginBottom: 8, 
+    fontSize: 13 
+  },
   inputWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -173,11 +198,41 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginBottom: 16,
   },
-  policyRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 24 },
-  checkbox: { width: 20, height: 20, borderRadius: 4, borderWidth: 1, borderColor: '#999', marginRight: 8, justifyContent: 'center', alignItems: 'center' },
-  policyText: { fontSize: 14, color: '#666', flexShrink: 1 },
-  link: { color: PURPLE, textDecorationLine: 'underline' },
-  loginButton: { backgroundColor: PURPLE, borderRadius: 24, paddingVertical: 14, alignItems: 'center' },
-  loginText: { color: '#fff', fontSize: 16 },
-  disabled: { opacity: 0.5 },
+  policyRow: { 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    marginBottom: 24 
+  },
+  checkbox: { 
+    width: 20, 
+    height: 20, 
+    borderRadius: 4, 
+    borderWidth: 1, 
+    borderColor: '#999', 
+    marginRight: 8, 
+    justifyContent: 'center', 
+    alignItems: 'center' 
+  },
+  policyText: { 
+    fontSize: 14, 
+    color: '#666', 
+    flexShrink: 1
+  },
+  link: { 
+    color: PURPLE, 
+    textDecorationLine: 'underline' 
+  },
+  loginButton: { 
+    backgroundColor: PURPLE, 
+    borderRadius: 24, 
+    paddingVertical: 14, 
+    alignItems: 'center' 
+  },
+  loginText: { 
+    color: '#fff', 
+    fontSize: 16 
+  },
+  disabled: { 
+    opacity: 0.5 
+  },
 })

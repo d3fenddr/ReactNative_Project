@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import type { ComponentProps } from 'react'
-import {
-  SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-  FlatList,
-  Dimensions,
-} from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { useFonts } from 'expo-font'
+import type { ComponentProps } from 'react'
+import React, { useState } from 'react'
+import {
+  Dimensions,
+  FlatList,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 
 const fontMap = {
   HelveticaNeueMedium: require('../../../assets/fonts/HelveticaNeueMedium.otf'),
@@ -35,10 +35,14 @@ const sessions = [
 ]
 
 export default function MeditateScreen() {
+  // 1) Все хуки объявляем до любых условий и return
   const [fontsLoaded] = useFonts(fontMap)
-  if (!fontsLoaded) return null
-
   const [activeCategory, setActiveCategory] = useState<string>('All')
+
+  // 2) После этого можно выйти, если шрифты ещё не загрузились
+  if (!fontsLoaded) {
+    return null
+  }
 
   const renderCategory = ({ key, icon }: { key: string; icon: IconName }) => {
     const isActive = activeCategory === key
@@ -80,7 +84,9 @@ export default function MeditateScreen() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.content}
       >
-        <Text style={[styles.title, { fontFamily: 'HelveticaNeueMedium' }]}>Meditate</Text>
+        <Text style={[styles.title, { fontFamily: 'HelveticaNeueMedium' }]}>
+          Meditate
+        </Text>
         <Text style={[styles.subtitle, { fontFamily: 'HelveticaNeueMedium' }]}>
           we can learn how to recognize when our minds{"\n"}are doing their
           normal everyday acrobatics.
@@ -96,8 +102,12 @@ export default function MeditateScreen() {
 
         <TouchableOpacity style={styles.dailyCard}>
           <View>
-            <Text style={[styles.dailyTitle, { fontFamily: 'HelveticaNeueMedium' }]}>Daily Calm</Text>
-            <Text style={[styles.dailySubtitle, { fontFamily: 'HelveticaNeueMedium' }]}>APR 30 · PAUSE PRACTICE</Text>
+            <Text style={[styles.dailyTitle, { fontFamily: 'HelveticaNeueMedium' }]}>
+              Daily Calm
+            </Text>
+            <Text style={[styles.dailySubtitle, { fontFamily: 'HelveticaNeueMedium' }]}>
+              APR 30 · PAUSE PRACTICE
+            </Text>
           </View>
           <View style={styles.playButton}>
             <Ionicons name="play" size={24} color="#fff" />

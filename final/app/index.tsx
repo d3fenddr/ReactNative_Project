@@ -10,6 +10,6 @@ export default function Index() {
   }
 
   return token
-    ? <Redirect href="/choose-topic" />
+    ? <Redirect href="/(tabs)/home" />
     : <Redirect href="/(auth)/firstpage" />
 }
